@@ -2,11 +2,10 @@
 const log = top.console.log;
 
 // G-API
-const API_KEY   = "AIzaSyCpVy-FZZurgg5qxNttSbUEE_2FYiNSh9s";
-const CLIENT_ID = "946994473664-pu8mk7s22fv96d0cp0tf95givlbn5qic.apps.googleusercontent.com";
-const SCOPES    = "https://www.googleapis.com/auth/drive.metadata.readonly\x20"+
-                  "https://www.googleapis.com/auth/drive.file\x20"+
-                  "https://www.googleapis.com/auth/drive.install";
+const API_KEY   = "AIzaSyC1wPVUn4mVMc4U5quoKgFhU9xZgm9hUk4";
+const CLIENT_ID = "607986114101-9tehp2a2lrmgnd2rdu1fvaqa4999928p.apps.googleusercontent.com";
+const SCOPES    = "https://www.googleapis.com/auth/drive.install\x20"+
+                  "https://www.googleapis.com/auth/drive.file";
 const DISC_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
 
 // Vars
@@ -61,7 +60,7 @@ async function gdrive_create_file(Folder_Id,File_Name,Binobj){
     Xhr.setRequestHeader("Authorization", "Bearer "+Access_Token);
     Xhr.responseType = "json";
     Xhr.onload = ()=>{
-        log("[Dad's TE] Gdrive file id:",Xhr.response.id); // Retrieve uploaded file ID.
+        log("[Dee's HE] Gdrive file id:",Xhr.response.id); // Retrieve uploaded file ID.
         File_Id = Xhr.response.id;
 
         if (File_Id==null)
@@ -101,7 +100,7 @@ async function gdrive_update_file(File_Id,File_Name,Binobj){
     Xhr.setRequestHeader("Authorization", "Bearer "+Access_Token);
     Xhr.responseType = "json";
     Xhr.onload = ()=>{
-        log("[Dad's TE] Gdrive file id:",Xhr.response.id); // Retrieve uploaded file ID.
+        log("[Dee's HE] Gdrive file id:",Xhr.response.id); // Retrieve uploaded file ID.
         File_Id = Xhr.response.id;
 
         if (File_Id==null)
@@ -139,7 +138,7 @@ async function gdrive_get_file(File_Id){
     Xhr.setRequestHeader("Authorization", "Bearer "+Access_Token);
     Xhr.responseType = "json";
     Xhr.onload = ()=>{
-        log("[Dad's TE] Gdrive file name:",Xhr.response.name); // Retrieve uploaded file ID.
+        log("[Dee's HE] Gdrive file name:",Xhr.response.name); // Retrieve uploaded file ID.
         File_Name = Xhr.response.name;
         Unlock();
     };
@@ -165,7 +164,7 @@ async function gdrive_get_file(File_Id){
     Xhr.setRequestHeader("Authorization", "Bearer "+Access_Token);
     Xhr.responseType = "text";
     Xhr.onload = ()=>{
-        log("[Dad's TE] Gdrive file len:",Xhr.responseText.length); // Retrieve uploaded file ID.
+        log("[Dee's HE] Gdrive file len:",Xhr.responseText.length); // Retrieve uploaded file ID.
         Textcontent = Xhr.responseText;
         Unlock();
     };
@@ -187,7 +186,7 @@ function init_client() {
     }).
     then(
     function(){
-        log("[Dad's TE] gapi initialised!");
+        log("[Dee's HE] gapi initialised!");
 
         // Listen for sign-in state changes.
         gapi.auth2.getAuthInstance().isSignedIn.listen(update_signin_status);
@@ -197,7 +196,7 @@ function init_client() {
         Auth_Btn.onclick = handle_auth_click;
     },
     function(Err) {
-        log("[Dad's TE] Failed to init gapi, err:",Err);
+        log("[Dee's HE] Failed to init gapi, err:",Err);
     });
 }
 
@@ -289,7 +288,7 @@ function get_state_in_url(){
 // Check gdrive action
 function check_gdrive_action(){
     Gstate = get_state_in_url();
-    log("[Dad's TE] State from Gdrive:",Gstate);
+    log("[Dee's HE] State from Gdrive:",Gstate);
     
     if (Gstate==null || Object.keys(Gstate).length==0){
         alert("This web app only works in integration with Gdrive!");
