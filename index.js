@@ -250,7 +250,7 @@ function create_edit_area(){
     
     // Editor.js
     tinymce.init({
-        selector: 'textarea#full-featured-non-premium'
+        selector: 'textarea#Edit-Area'
     });
 }
 
