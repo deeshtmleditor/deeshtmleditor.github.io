@@ -249,17 +249,19 @@ function create_edit_area(){
     });*/
     
     // Editor.js
-    var Editor = new EditorJS({ holder:"Edit-Area" });
+    tinymce.init({
+        selector: 'textarea#full-featured-non-premium'
+    });
 }
 
 // Set content
 function set_content(Content){
-    return Editor.setValue(Content);
+    return tinymce.activeEditor.setContent(Content);
 }
 
 // Get content
 function get_content(){
-    return Editor.getValue();
+    return tinymce.activeEditor.getContent();
 }
 
 // Set status
