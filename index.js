@@ -241,21 +241,16 @@ function handle_gapi_load(){
 
 // Create edit area
 function create_edit_area(){
-    /*var Area = d$("#Edit-Area");
-  
-    Editor = CodeMirror.fromTextArea(Area,{ 
-        lineNumbers: true,
-        mode:        null
-    });*/
     
-    // Editor.js
+    // Editor
     tinymce.init({
-        selector: 'textarea#Edit-Area',
-        plugins: 'print preview paste importcss searchreplace autolink autosave '+
-        'save directionality code visualblocks visualchars fullscreen image link '+
-        'media template codesample table charmap hr pagebreak nonbreaking anchor '+
-        'toc insertdatetime advlist lists wordcount imagetools textpattern '+
-        'noneditable help charmap quickbars emoticons'
+        selector: "textarea#Edit-Area",
+        resize:   false,
+        plugins:  "print preview paste importcss searchreplace autolink autosave "+
+        "save directionality code visualblocks visualchars fullscreen image link "+
+        "media template codesample table charmap hr pagebreak nonbreaking anchor "+
+        "toc insertdatetime advlist lists wordcount imagetools textpattern "+
+        "noneditable help charmap quickbars emoticons"
     });
 }
 
