@@ -241,12 +241,15 @@ function handle_gapi_load(){
 
 // Create edit area
 function create_edit_area(){
-    var Area = d$("#Edit-Area");
+    /*var Area = d$("#Edit-Area");
   
     Editor = CodeMirror.fromTextArea(Area,{ 
         lineNumbers: true,
         mode:        null
-    });
+    });*/
+    
+    // Editor.js
+    var Editor = new EditorJS({ holder:"Edit-Area" });
 }
 
 // Set content
