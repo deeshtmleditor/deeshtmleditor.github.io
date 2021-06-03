@@ -12,6 +12,8 @@
                 height:calc(100vh - 6rem) !important; position:fixed !important;
                 left:25vw !important; top:3rem !important;
             }
+            
+            div[role=application] { position:fixed; left:25vw; top:3rem; }
         </style>
         
         <!-- Libs -->
@@ -31,7 +33,7 @@
         <input id="File-Name" placeholder="Enter file name here, with extension"
             style="width:25vw; height:1.5rem; position:fixed; 
             left:50vw; top:1.5rem;"/>
-        <textarea id="Edit-Area" style="width:50vw; height:calc(100vh - 6rem);
+        <textarea id="Edit-Area" style="width:50vw; height:calc((100vh - 6rem) - 12px);
             position:fixed; left:25vw; top:3rem; resize:none;"></textarea>
         
         <div style="position:fixed; width:50vw; height:3rem; left:25vw; bottom:0rem;
