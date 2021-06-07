@@ -253,6 +253,9 @@ function create_edit_area(){
         "toc insertdatetime advlist lists wordcount imagetools textpattern "+
         "noneditable help charmap quickbars emoticons"
     });
+    
+    // Disable unload confirm
+    window.onbeforeunload = function(){};
 }
 
 // Set content
