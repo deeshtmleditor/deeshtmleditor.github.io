@@ -246,6 +246,7 @@ function create_edit_area(){
     tinymce.init({
         selector: "textarea#Edit-Area",
         resize:   false,
+        autosave_ask_before_unload: false,
         // Removed 'autosave' plugin to avoid onunload confirm
         plugins:  "print preview paste importcss searchreplace autolink "+
         "save directionality code visualblocks visualchars fullscreen image link "+
@@ -255,7 +256,9 @@ function create_edit_area(){
     });
     
     // Disable unload confirm
-    window.onbeforeunload = function(){};
+    window.addEventListener("beforeunload",function(Event){
+        Event.stopPropagation();
+    },true);
 }
 
 // Set content
