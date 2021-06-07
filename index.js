@@ -246,7 +246,8 @@ function create_edit_area(){
     tinymce.init({
         selector: "textarea#Edit-Area",
         resize:   false,
-        plugins:  "print preview paste importcss searchreplace autolink autosave "+
+        // Removed 'autosave' plugin to avoid onunload confirm
+        plugins:  "print preview paste importcss searchreplace autolink "+
         "save directionality code visualblocks visualchars fullscreen image link "+
         "media template codesample table charmap hr pagebreak nonbreaking anchor "+
         "toc insertdatetime advlist lists wordcount imagetools textpattern "+
