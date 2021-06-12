@@ -244,9 +244,11 @@ function create_edit_area(){
     
     // Editor
     tinymce.init({
-        selector: "textarea#Edit-Area",
-        resize:   false,
+        selector:    "textarea#Edit-Area",
+        resize:      false,
+        content_css: "/tinymce.css",
         autosave_ask_before_unload: false,
+        
         // Removed 'autosave' plugin to avoid onunload confirm
         plugins:  "print preview paste importcss searchreplace autolink "+
         "save directionality code visualblocks visualchars fullscreen image link "+
